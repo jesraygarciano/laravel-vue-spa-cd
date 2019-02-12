@@ -11,6 +11,10 @@
         <li class="nav-item">
           <router-link to="/posts" class="nav-link">Posts</router-link>
         </li>
+        <li class="nav-item">
+          <!-- <router-link to="/calc" class="nav-link">Calculator</router-link> -->
+          <a href="/calc" class="nav-link">Calculator</a>
+        </li>
       </ul>
     </nav><br />
     <transition name="fade">
