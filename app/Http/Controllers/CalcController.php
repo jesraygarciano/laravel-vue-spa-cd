@@ -47,7 +47,7 @@ class CalcController extends Controller
                     'action' => '+',
                 );
             }
-            return view('calc', $items);
+            return view('home', $items);
         }
     }
 
