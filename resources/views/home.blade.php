@@ -195,19 +195,37 @@
 
         <form action="/calc" method="post">
             {{ csrf_field() }}
-            <input placeholder="A" value="{{ $a }}" name="a" />
-            <select name="action">
-                <option @if ($action=='+' ) selected="selected" @endif>+</option>
-                <option @if ($action=='-' ) selected="selected" @endif>-</option>
-                <option @if ($action=='*' ) selected="selected" @endif>*</option>
-                <option @if ($action=='/' ) selected="selected" @endif>/</option>
+            <input placeholder="# of Photos" value="{{ $a }}" name="a" class="p-3" />
+            <select name="action" class="p-2">
+                <option @if ($action == '+') selected="selected" @endif>+</option>
+                <option @if ($action == '-') selected="selected" @endif>-</option>
+                <option @if ($action == '*') selected="selected" @endif>*</option>
+                <option @if ($action == '/') selected="selected" @endif>/</option>
             </select>
-            <input placeholder="B" value="{{ $b }}" name="b" />
+            <input placeholder="Minutes" value="{{ $b }}" name="b" class="p-3" />
             @if (isset($result))
-            <strong>= {{ $result }}</strong>
+                <strong>= {{ $result }}</strong>
             @endif
-            <button type="button" class="btn btn-primary">Execute</button>            
+            <button id="submitcalc" class="btn btn-primary">Execute</button>
+            {{-- <input class="submit" type="submit" value="Send" /> --}}
         </form>
+
+        {{-- <script>
+                $('#submit').click(function() {
+                    $.ajax({
+                        url: '/calc',
+                        type: 'POST',
+                        data: {
+                            email: 'email@example.com',
+                            message: 'hello world!'
+                        },
+                        success: function(msg) {
+                            alert('Email Sent');
+                        }               
+                    });
+                });
+        </script> --}}
+
     </div>
   </section>
 
