@@ -68,29 +68,29 @@ class PostController extends Controller
 
     private function render($items = null)
     {
-        $c = new Calculator();        
-        if (is_array($items) && isset($items['a']) && isset($items['b']) && isset($items['action'])){
-            $action = $items['action'];
-            $a = floatval($items['a']);
-            $b = floatval($items['b']);
-            if ($action == '+'){
-                $result = $c->sum($a, $b);
-            }else if ($action == '-'){
-                $result = $c->diff($a, $b);
-            }else if ($action == '*') {
-                $result = $c->multiplication($a, $b);
-            }else{
-                $result = $c->div($a, $b);
-            }
-            $items['result'] = $result;
-        }else{
-            $items = array(
-                'a' => '',
-                'b' => '',
-                'action' => '+',
-            );
-        }
-        return view('calc', $items);
+          $c = new Calculator();        
+          if (is_array($items) && isset($items['a']) && isset($items['b']) && isset($items['action'])){
+              $action = $items['action'];
+              $a = floatval($items['a']);
+              $b = floatval($items['b']);
+              if ($action == '+'){
+                  $result = $c->sum($a, $b);
+              }else if ($action == '-'){
+                  $result = $c->diff($a, $b);
+              }else if ($action == '*') {
+                  $result = $c->multiplication($a, $b);
+              }else{
+                  $result = $c->div($a, $b);
+              }
+              $items['result'] = $result;
+          }else{
+              $items = array(
+                  'a' => '',
+                  'b' => '',
+                  'action' => '+',
+              );
+          }
+          return view('calc', $items);
     }
     
 }
