@@ -40,12 +40,6 @@ class CalcController extends Controller
                     $result = $c->div($a, $b);
                 }
                 $items['result'] = $result;
-            }else{
-                $items = array(
-                    'a' => '',
-                    'b' => '',
-                    'action' => '+',
-                );
             }
             return view('calc', $items);
         }
